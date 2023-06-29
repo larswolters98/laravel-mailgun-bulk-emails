@@ -21,7 +21,7 @@ class SendExampleNotification extends Command
         foreach ($chunks as $chunk) {
             $sendBulkEmail->execute(
                 new ExampleNotification([
-                    'url' => 'https://example.com',
+                    'url' => 'https://example.com', // Shared data across all recipients
                 ]),
                 'Example notification subject',
                 $chunk->map(fn($user) => [
@@ -32,7 +32,7 @@ class SendExampleNotification extends Command
                 ])->toArray()
             );
 
-            $this->info("Sent notification to {$chunk->count()} users\n");
+            $this->info("Sent notification to {$chunk->count()} users");
         }
     }
 }

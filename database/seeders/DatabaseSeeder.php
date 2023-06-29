@@ -9,13 +9,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // We create a user with an allowed email address
+        // We create a user with an allowed email address (configure in your Mailgun dashboard)
         User::factory()->create([
-            'name' => 'Lars Wolters',
-            'email' => 'larstwolters@gmail.com',
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
         ]);
 
-        // We create 1999 users with a random email address
-        User::factory(1999)->create();
+        // (optional) We create 1999 users with a random email address
+        // User::factory(1999)->create();
     }
 }
