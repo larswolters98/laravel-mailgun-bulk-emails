@@ -24,12 +24,12 @@ class SendExampleNotification extends Command
                     'url' => 'https://example.com',
                 ]),
                 'Example notification subject',
-                $chunk->map(fn ($user) => [
+                $chunk->map(fn($user) => [
                     'email' => $user->email,
                     'data' => [
                         'name' => $user->name
                     ],
-                ])->toArray(),
+                ])->toArray()
             );
 
             $this->info("Sent notification to {$chunk->count()} users\n");
