@@ -18,7 +18,7 @@ class SendBulkEmail
         // We create a batch message, and set the sender, subject and HTML body
         $email = $mailgun->messages()
             ->getBatchMessage(config('services.mailgun.domain'))
-            ->setFromAddress(config('mail.from.address'))
+            ->setFromAddress(config('mail.from.address'), ['full_name' => config('mail.from.name')])
             ->setSubject($subject)
             ->setHtmlBody($notification->toMail()->render());
 
