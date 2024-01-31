@@ -1,6 +1,6 @@
-# Sending bulk emails in Laravel 10 using the Mailgun API example
+# Laravel & Mailgun bulk email sending
 
-This is an example on how to send bulk emails in Laravel using the Mailgun API. The problem with queueing bulk emails is
+This is an example on how to send bulk emails in Laravel 10 using the Mailgun API. The problem with queueing bulk emails is
 that you can't use the `Mail::queue()` method because it will create a new job for each email. This will cause the queue
 to grow very fast and eventually crash.
 
